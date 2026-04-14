@@ -14,8 +14,8 @@ const randomLastNames = [
 
 const sexOptions = [
   { label: "Select", value: "" },
-  { label: "Male", value: "M" },
-  { label: "Female", value: "F" },
+  { label: "M", value: "M" },
+  { label: "F", value: "F" },
   { label: "X", value: "X" },
 ];
 
@@ -57,11 +57,11 @@ const suffixOptions = ["NONE", "JR", "SR", "II", "III", "IV"];
 
 const initialForm = {
   dlNumber: "",
-  firstName: "John",
-  lastName: "Doe",
+  firstName: "",
+  lastName: "",
   middleName: "",
   address: "",
-  city: "Beeville",
+  city: "",
   zipCode: "",
   dlClass: "",
   sex: "",
@@ -579,10 +579,6 @@ const BarCode = () => {
           <h1 className="mt-2 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
             Driver License PDF417 Builder
           </h1>
-          <p className="mt-3 text-sm text-slate-500">
-            Enter driver license data, generate random values from the
-            calculator buttons, then create and download the barcode.
-          </p>
         </div>
 
         <div className="space-y-6">
@@ -591,7 +587,7 @@ const BarCode = () => {
               label="DL Number"
               value={form.dlNumber}
               onChange={updateField("dlNumber")}
-              placeholder="8-digit DL number"
+              placeholder="96420133"
               maxLength={8}
               showInfo
               showGenerator
@@ -602,7 +598,7 @@ const BarCode = () => {
               label="First name"
               value={form.firstName}
               onChange={updateField("firstName")}
-              placeholder="Enter first name"
+              placeholder="John"
               showGenerator
               generatorLabel="Generate random First name"
               onGenerate={() => generateValueForField("firstName")}
@@ -611,7 +607,7 @@ const BarCode = () => {
               label="Last name"
               value={form.lastName}
               onChange={updateField("lastName")}
-              placeholder="Enter last name"
+              placeholder="Doe"
               showGenerator
               generatorLabel="Generate random Last name"
               onGenerate={() => generateValueForField("lastName")}
@@ -623,7 +619,7 @@ const BarCode = () => {
               label="Middle name"
               value={form.middleName}
               onChange={updateField("middleName")}
-              placeholder="Enter middle name"
+              placeholder="Grace"
               showInfo
               showGenerator
               generatorLabel="Generate random Middle name"
@@ -633,13 +629,13 @@ const BarCode = () => {
               label="Address"
               value={form.address}
               onChange={updateField("address")}
-              placeholder="Street address"
+              placeholder="709 E Clare St"
             />
             <TextField
               label="City"
               value={form.city}
               onChange={updateField("city")}
-              placeholder="City name"
+              placeholder="Rutherford"
             />
           </div>
 
@@ -648,7 +644,7 @@ const BarCode = () => {
               label="Zip code"
               value={form.zipCode}
               onChange={updateField("zipCode")}
-              placeholder="9-digit ZIP code"
+              placeholder="754901234"
               maxLength={9}
               showGenerator
               generatorLabel="Generate random ZIP code"
@@ -658,7 +654,7 @@ const BarCode = () => {
               label="DL Class"
               value={form.dlClass}
               onChange={updateField("dlClass")}
-              placeholder="Example: C"
+              placeholder="C"
             />
             <SelectField
               label="Sex"
@@ -679,16 +675,16 @@ const BarCode = () => {
               label="Birth date"
               value={form.birthDate}
               onChange={updateField("birthDate")}
-              placeholder="MMDDYYYY (e.g. 04241982)"
+              placeholder="07112001"
               showGenerator
-              generatorLabel="Generate random Birth date"
+              generatorLabel=""
               onGenerate={generateBirthDateForField}
             />
             <DateField
               label="Issue date"
               value={form.issueDate}
               onChange={updateField("issueDate")}
-              placeholder="MMDDYYYY"
+              placeholder="04242025"
               showGenerator
               generatorLabel="Generate random Issue date"
               onGenerate={generateIssueDateForField}
@@ -697,7 +693,7 @@ const BarCode = () => {
               label="Expiry date"
               value={form.expiryDate}
               onChange={updateField("expiryDate")}
-              placeholder="MMDDYYYY"
+              placeholder="05152030"
               showGenerator
               generatorLabel="Generate random Expiry date"
               onGenerate={generateExpiryDateForField}
@@ -709,7 +705,7 @@ const BarCode = () => {
               label="DD"
               value={form.dd}
               onChange={updateField("dd")}
-              placeholder="00629480035200 + 6 digits"
+              placeholder="00629480035200145896"
               maxLength={20}
               showInfo
               showGenerator
@@ -720,7 +716,7 @@ const BarCode = () => {
               label="ICN"
               value={form.icn}
               onChange={updateField("icn")}
-              placeholder="10000 + 6 digits"
+              placeholder="10000894214"
               maxLength={11}
               showInfo
               showGenerator
